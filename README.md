@@ -149,12 +149,14 @@ Looking at the classification report table; precision, recall and f1 score value
 
 ## Summary
 
-Table 8. Machine Learning Algorithm's Accuracy Scores
+#### Table 8. Machine Learning Algorithm's Accuracy Scores
+
 <img width="550" alt="Screen Shot 2023-01-19 at 10 34 12 AM" src="https://user-images.githubusercontent.com/26927158/213503562-ead32a99-e659-45c1-b2b5-5b24e71ddf0d.png">
 
 In Table 8, the accuracy score values of the machine learning algorithms used in the study are tabulated. Considering all these values, the model with the highest accuracy value is the AdaBoost algorithm.
 
-Chart 1. Accuracy Scores of the Models Bar Chart
+#### Chart 1. Accuracy Scores of the Models Bar Chart
+
 <img width="763" alt="image" src="https://user-images.githubusercontent.com/26927158/213504491-78edd09b-956f-4297-a747-ea4634f02d2d.png">
 
 In the bar chart above, the accuracy score values are listed and graphed from the best score to the lowest score. According to this graph,
@@ -182,8 +184,12 @@ Our computers have different types of memory such as hard disk, RAM and cache. C
 
 AdaBoost calculates similarity score and tree output value in cache. For this reason, quick calculations can be made.
 
+##### Advantages of the Random Forest algorithm.
+- For applications in classification problems, the Random Forest algorithm avoids the overfitting problem.
+- It can be used in both classification and regression problems of the Random Forest algorithm.
+- The Random Forest algorithm can be used to identify the most important feature among the available features in the training dataset.
 
-
+Finally, according to the information obtained from the above research results, a better accuracy score was obtained from the models of ensemble machine learning algorithms.
 
 
 
