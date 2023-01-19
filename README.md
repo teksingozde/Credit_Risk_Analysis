@@ -72,7 +72,7 @@ Resampling methods generally offer the following advantages:
 
 ##### Techniques
 
-###### 1. Random Oversampling
+##### 1. Random Oversampling
 Random oversampling involves randomly duplicating examples from the minority class and adding them to the training dataset.
 Examples from the training dataset are selected randomly with replacement. This means that examples from the minority class can be chosen and added to the new “more balanced” training dataset multiple times; they are selected from the original training dataset, added to the new training dataset, and then returned or “replaced” in the original dataset, allowing them to be selected again.
 This technique can be effective for those machine learning algorithms that are affected by a skewed distribution and where multiple duplicate examples for a given class can influence the fit of the model. This might include algorithms that iteratively learn coefficients, like artificial neural networks that use stochastic gradient descent. It can also affect models that seek good splits of the data, such as support vector machines and decision trees.
@@ -95,7 +95,7 @@ This has the effect of reducing the number of examples in the majority class in 
 This approach may be more suitable for those datasets where there is a class imbalance although a sufficient number of examples in the minority class, such a useful model can be fit.
 A limitation of undersampling is that examples from the majority class are deleted that may be useful, important, or perhaps critical to fitting a robust decision boundary. Given that examples are deleted randomly, there is no way to detect or preserve “good” or more information-rich examples from the majority class.
 
-##### 4. 4.	Combining Random Oversampling & Undersampling (SMOOTEENN)
+##### 4.	Combining Random Oversampling & Undersampling (SMOOTEENN)
 Combining both random sampling methods can occasionally result in overall improved performance in comparison to the methods being performed in isolation.
 The concept is that we can apply a modest amount of oversampling to the minority class, which improves the bias to the minority class examples, whilst we also perform a modest amount of undersampling on the majority class to reduce the bias on the majority class examples.
 
@@ -147,10 +147,40 @@ Looking at the classification report table; precision, recall and f1 score value
 Of the data marked in the low risk group in the test dataset, 72 were classified correctly and 7305 were classified incorrectly. While it classified 9799 of the people in the high risk group correctly and 29 were classified incorrectly. The accuracy score of this model is 64.28%.
 Looking at the classification report table; precision, recall and f1 score values are medium level satisfactory.
 
+## Summary
 
+Table 8. Machine Learning Algorithm's Accuracy Scores
+<img width="550" alt="Screen Shot 2023-01-19 at 10 34 12 AM" src="https://user-images.githubusercontent.com/26927158/213503562-ead32a99-e659-45c1-b2b5-5b24e71ddf0d.png">
 
+In Table 8, the accuracy score values of the machine learning algorithms used in the study are tabulated. Considering all these values, the model with the highest accuracy value is the AdaBoost algorithm.
 
+Chart 1. Accuracy Scores of the Models Bar Chart
+<img width="763" alt="image" src="https://user-images.githubusercontent.com/26927158/213504491-78edd09b-956f-4297-a747-ea4634f02d2d.png">
 
+In the bar chart above, the accuracy score values are listed and graphed from the best score to the lowest score. According to this graph,
+While AdaBoost Classifier algorithm gave the best score, the second algorithm was Random Forest Classifier. In other words, the ensemble machine learning algorithm group gave the best results.
+
+#### WHY DOES IT PERFORM BETTER?
+AdaBoost shows higher prediction success using different techniques and is optimized to work on large datasets.
+
+##### Working with Null Values
+One of the biggest problems with datasets is that they have null values. Sometimes due to technical problems and sometimes due to the nature of the data flow, there may be empty data. For whatever reason, in order to use many algorithms, these data must be filled or the relevant row must be removed from the data set. One of the differences of AdaBoost is that it can work with null values.
+
+In the background of AdaBoost, since the first estimate is set to 0.5 by default, residual values will also be generated for rows with blank data as a result of the estimate. In the decision tree created for the second guess, the error values in the rows with empty data are placed in different branches for all possible possibilities and the winning score is calculated for each case. In which case the score is higher, null values will be assigned to those branches.
+
+##### Weighted Quantile Sketch
+AdaBoost builds decision trees in all possible scenarios to maximize the earnings score for each variable. Such algorithms are called "Greedy Algorithm". This process can take a very long time in large datasets.
+
+Instead of examining each value in the data, AdaBoost divides the data into pieces (quantile) and works according to these pieces. As the amount of parts is increased, the algorithm will look at smaller intervals and make better predictions. Of course, this will increase the learning time of the model.
+
+The problem with this approach is of course the performance issue. To identify the pieces, each column must be lined up, the boundaries of the pieces determined, and trees established. This causes slowness.
+
+An algorithm called "Sketches" is used to overcome the problem. Its purpose is to converge to find the pieces.
+
+##### System Optimization
+Our computers have different types of memory such as hard disk, RAM and cache. Cache memory is the fastest used but the smallest memory. If a program is desired to run fast, the cache should be used at the maximum level.
+
+AdaBoost calculates similarity score and tree output value in cache. For this reason, quick calculations can be made.
 
 
 
