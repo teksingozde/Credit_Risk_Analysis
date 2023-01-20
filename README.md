@@ -162,6 +162,8 @@ In Table 8, the accuracy score values of the machine learning algorithms used in
 In the bar chart above, the accuracy score values are listed and graphed from the best score to the lowest score. According to this graph,
 While AdaBoost Classifier algorithm gave the best score, the second algorithm was Random Forest Classifier. In other words, the ensemble machine learning algorithm group gave the best results.
 
+The SMOTE Oversampling machine learning algorithm, which is in the 3rd place, gives the best accuracy score value among the resampling algorithms.
+
 #### WHY DOES IT PERFORM BETTER?
 AdaBoost shows higher prediction success using different techniques and is optimized to work on large datasets.
 
